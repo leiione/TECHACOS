@@ -1,0 +1,6 @@
+[Tue Apr 26 11:30:28.022236 2022] [php:error] [pid 21] [client 182.180.108.229:25253] script '/var/www/html/api.domain.loc/html/test_mysql.php' not found or unable to stat
+[Tue Apr 26 11:32:44.127538 2022] [php:error] [pid 18] [client 182.180.164.20:49371] script '/var/www/html/api.domain.loc/html/test_mysql.php' not found or unable to stat
+[Tue Apr 26 11:32:46.498017 2022] [php:error] [pid 18] [client 182.180.164.20:49371] script '/var/www/html/api.domain.loc/html/test_mysql.php' not found or unable to stat
+[Tue Apr 26 11:42:13.973484 2022] [php:error] [pid 23] [client 182.180.164.20:25192] script '/var/www/html/api.domain.loc/html/phpmyadmin.php' not found or unable to stat
+[Tue Apr 26 12:12:17.672905 2022] [php:error] [pid 22] [client 182.180.164.20:35711] script '/var/www/html/api.domain.loc/html/test_mongo.php' not found or unable to stat
+[Wed Apr 27 08:06:18.427978 2022] [negotiation:error] [pid 19] [client 182.180.164.20:22367] AH00687: Negotiation: discovered file(s) matching request: /var/www/html/api.domain.loc/html/index (None could be negotiated).
