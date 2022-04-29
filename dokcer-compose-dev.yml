@@ -1,0 +1,58 @@
+version: '3'
+services:
+  php:
+    build: ./env/php/dev/
+    ports:
+     - '80:80'
+    environment:
+      MYSQL_HOST: '127.0.0.1'
+      MYSQL_ROOT_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MONGO_HOST: 'mongo'
+      REDIS_HOST: 'redis'
+      DEBUG: 'true'
+    volumes:
+      - ./sites:/var/www/html
+      - ./env/php/sites-enabled:/etc/apache2/sites-enabled
+  mysql:
+    build: ./env/mysql
+    ports:
+     - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+  mongo:
+    build: ./env/mongodb
+    ports:
+     - '27017:27017'
+    volumes:
+      - ./data/mongo/db:/data/db
+  redis:
+    build: ./env/redis
+    ports:
+     - '127.0.0.1:6380:6379'
+    volumes:
+      - ./data/redis:/data
+  elasticsearch:
+    build: ./env/elasticsearch
+    hostname: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+ulimits:
+  memlock:
+  soft: -1
+  hard: -1
+volumes:
+  - ./data/esdata/single:/usr/share/elasticsearch/data
+ports:
+  - "9200:9200"
+kibana:
+  build: ./env/kibana
+  environment:
+    - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+  ports:
+    - "5601:5601"
