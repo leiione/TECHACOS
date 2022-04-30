@@ -3,7 +3,7 @@ services:
   php:
     build: ./env/php/dev/
     ports:
-     - '80:80'
+      - '80:80'
     environment:
       MYSQL_HOST: '127.0.0.1'
       MYSQL_ROOT_USER: 'root'
@@ -17,7 +17,7 @@ services:
   mysql:
     build: ./env/mysql
     ports:
-     - '3306:3306'
+      - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: pass
     volumes:
@@ -25,6 +25,6 @@ services:
   mongo:
     build: ./env/mongodb
     ports:
-     - '27017:27017'
+      - '27017:27017'
     volumes:
       - ./data/mongo/db:/data/db
