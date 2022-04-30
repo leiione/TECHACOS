@@ -39,7 +39,7 @@ docker-compose -f docker-compose-dev.yml --build
 ```http
 docker-compose -f docker-compose-dev.yml up
 ```
-To configure XDEBUG with PHP Storm, following the link below.
+To configure XDEBUG with PHP Storm, follow the link below.
 https://matthewsetter.com/setup-step-debugging-php-xdebug3-docker/
 
 
